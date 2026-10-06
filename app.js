@@ -164,3 +164,13 @@ $("#mainBtn").addEventListener("click",()=>{if(step<4){step++;render();$(".app-c
 $("#restartBtn").addEventListener("click",()=>{step=1;state.vehicle=C.vehicles[0].id;state.package=C.packages.find(x=>x.featured)?.id||C.packages[0].id;state.condition=C.conditions[0].id;state.extras=[];state.customer={name:"",car:"",date:"",note:""};render()});
 $("#langSelect").addEventListener("change",e=>{lang=e.target.value;localStorage.setItem("quotego_lang",lang);render()});
 render();
+
+function openSalesModal(){document.getElementById("salesModal")?.classList.add("show")}
+function closeSalesModal(){document.getElementById("salesModal")?.classList.remove("show")}
+document.getElementById("salesCta")?.addEventListener("click",openSalesModal);
+document.getElementById("salesClose")?.addEventListener("click",closeSalesModal);
+document.querySelector(".sales-backdrop")?.addEventListener("click",closeSalesModal);
+document.getElementById("copyInterest")?.addEventListener("click",async()=>{
+ const msg="Bonjour, je viens de tester QuoteGo et je voudrais une version adaptée à mon entreprise. Je souhaite en savoir plus sur la personnalisation des prestations, tarifs, langues et WhatsApp.";
+ try{await navigator.clipboard.writeText(msg);document.getElementById("copyStatus").textContent="Message copié ✓"}catch(e){document.getElementById("copyStatus").textContent="Copie impossible sur ce navigateur."}
+});

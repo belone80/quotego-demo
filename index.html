@@ -1,96 +1,100 @@
 <!DOCTYPE html>
 <html lang="fr" dir="ltr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <meta name="theme-color" content="#07100e">
-  <meta name="description" content="QuoteGo - devis instantané et réservation WhatsApp pour services automobiles.">
-  <title>QuoteGo Auto</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0,viewport-fit=cover">
+<meta name="theme-color" content="#07100e"><title>QuoteGo — Démo commerciale</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div class="noise"></div>
-  <div class="orb orb-a"></div>
-  <div class="orb orb-b"></div>
+<div class="noise"></div><div class="orb orb-a"></div><div class="orb orb-b"></div>
 
-  <header class="topbar">
-    <div class="brand">
-      <div class="brand-mark" id="brandMark">Q</div>
-      <div class="brand-copy">
-        <strong id="brandName">QuoteGo Auto</strong>
-        <span id="brandLocation">Bruxelles</span>
-      </div>
-    </div>
+<header class="topbar premium-topbar">
+  <div class="brand"><div class="brand-mark" id="brandMark">Q</div><div class="brand-copy"><strong id="brandName">QuoteGo</strong><span id="brandLocation">Bruxelles</span></div></div>
+  <div class="top-actions">
+    <a class="mini-link" href="#demo">Démo</a>
+    <a class="mini-link" href="#how">Fonctionnement</a>
+    <button class="ghost-btn" id="restartBtn" type="button">↻</button>
+    <select id="langSelect" class="lang-select"><option value="fr">FR</option><option value="nl">NL</option><option value="en">EN</option><option value="ar">AR</option></select>
+  </div>
+</header>
 
-    <div class="top-actions">
-      <button class="ghost-btn" id="restartBtn" type="button" title="Recommencer">↻</button>
-      <select id="langSelect" class="lang-select" aria-label="Langue">
-        <option value="fr">FR</option>
-        <option value="nl">NL</option>
-        <option value="en">EN</option>
-        <option value="ar">AR</option>
-      </select>
-    </div>
-  </header>
+<main>
+<section class="sales-hero">
+  <div class="sales-kicker">QUOTEGO · SMART CLIENT INTAKE</div>
+  <h1>Transforme une demande floue<br><span>en client prêt à réserver.</span></h1>
+  <p>QuoteGo pose les bonnes questions à la place du professionnel, calcule une estimation et prépare une demande claire avant même le premier échange.</p>
+  <div class="sales-actions"><a href="#demo" class="sales-primary">Tester la démo →</a><a href="#how" class="sales-secondary">Voir comment ça marche</a></div>
+  <div class="sales-metrics"><div><strong>30 sec</strong><span>pour qualifier une demande</span></div><div><strong>4 langues</strong><span>FR · NL · EN · AR</span></div><div><strong>0 €</strong><span>de logiciel pour la V1</span></div></div>
+</section>
 
-  <main>
-    <section class="hero">
-      <div class="eyebrow" data-i18n="heroEyebrow">DEVIS EN 30 SECONDES</div>
-      <h1 id="heroTitle">Ton véhicule.<br><span>Ton prix. Maintenant.</span></h1>
-      <p class="hero-copy" data-i18n="heroCopy">Configure ton nettoyage, découvre ton estimation et envoie ta demande directement sur WhatsApp.</p>
+<section class="compare-section">
+  <div class="sales-kicker">AVANT / APRÈS</div>
+  <h2>Moins de messages. Plus de demandes exploitables.</h2>
+  <div class="compare-grid">
+    <article class="compare-card bad">
+      <span>AVANT</span>
+      <div class="bubble right">Bonjour, c’est combien ?</div><div class="bubble">Quel véhicule ?</div>
+      <div class="bubble right">BMW</div><div class="bubble">Quel modèle ? Quel état ? Intérieur ou extérieur ?</div>
+      <div class="compare-foot">⏱️ Plusieurs échanges avant de comprendre le besoin</div>
+    </article>
+    <article class="compare-card good">
+      <span>AVEC QUOTEGO</span>
+      <div class="quote-row"><small>Véhicule</small><b>BMW Série 3</b></div>
+      <div class="quote-row"><small>Formule</small><b>Complet</b></div>
+      <div class="quote-row"><small>État</small><b>Très sale</b></div>
+      <div class="quote-row"><small>Options</small><b>Poils + sièges</b></div>
+      <div class="quote-row total"><small>Estimation</small><strong>140 €</strong></div>
+      <div class="compare-foot positive">✓ Une demande claire, prête à traiter</div>
+    </article>
+  </div>
+</section>
 
-      <div class="hero-chips">
-        <span>⚡ <b data-i18n="chipPrice">Prix instantané</b></span>
-        <span>💬 <b>WhatsApp</b></span>
-        <span>🌍 <b>FR / NL / EN / AR</b></span>
-      </div>
-    </section>
+<section class="how-section" id="how">
+  <div class="sales-kicker">COMMENT ÇA MARCHE</div><h2>Le client se qualifie lui-même.</h2>
+  <div class="how-grid">
+    <article><span>01</span><h3>Il choisit</h3><p>Service, véhicule, état, options et date souhaitée.</p></article>
+    <article><span>02</span><h3>QuoteGo calcule</h3><p>Une estimation basée sur les tarifs du professionnel.</p></article>
+    <article><span>03</span><h3>Le pro reçoit</h3><p>Une demande structurée, prête à confirmer.</p></article>
+  </div>
+</section>
 
-    <section class="app-card">
-      <div class="progress-wrap">
-        <div class="progress-copy">
-          <span id="progressLabel">Étape 1 sur 4</span>
-          <span id="progressPct">25%</span>
-        </div>
-        <div class="progress-track"><div id="progressBar"></div></div>
-      </div>
+<section class="demo-intro" id="demo"><div><div class="sales-kicker">DÉMO LIVE</div><h2>Teste QuoteGo comme un vrai client.</h2><p>Aucun numéro personnel n’est utilisé. À la fin, la démo affiche seulement le message qui serait envoyé au professionnel.</p></div><span>MODE DÉMO</span></section>
 
-      <div id="stepHost"></div>
+<section class="hero compact-hero">
+  <div class="eyebrow" data-i18n="heroEyebrow">DEVIS EN 30 SECONDES</div>
+  <h1 id="heroTitle">Ton véhicule.<br><span>Ton prix. Maintenant.</span></h1>
+  <p class="hero-copy" data-i18n="heroCopy">Configure ton nettoyage, découvre ton estimation et envoie ta demande directement sur WhatsApp.</p>
+  <div class="hero-chips"><span>⚡ <b data-i18n="chipPrice">Prix instantané</b></span><span>💬 <b>WhatsApp</b></span><span>🌍 <b>FR / NL / EN / AR</b></span></div>
+</section>
 
-      <div class="bottom-bar">
-        <div>
-          <small data-i18n="estimate">Estimation</small>
-          <strong id="liveTotal">0 €</strong>
-        </div>
-        <button id="mainBtn" class="main-btn" type="button">
-          <span data-i18n="continue">Continuer</span>
-          <b>→</b>
-        </button>
-      </div>
-    </section>
+<section class="app-card">
+  <div class="progress-wrap"><div class="progress-copy"><span id="progressLabel">Étape 1 sur 4</span><span id="progressPct">25%</span></div><div class="progress-track"><div id="progressBar"></div></div></div>
+  <div id="stepHost"></div>
+  <div class="bottom-bar"><div><small data-i18n="estimate">Estimation</small><strong id="liveTotal">0 €</strong></div><button id="mainBtn" class="main-btn" type="button"><span data-i18n="continue">Continuer</span><b>→</b></button></div>
+</section>
 
-    <section class="commercial-strip">
-      <div>
-        <span class="mini-icon">✓</span>
-        <p><strong data-i18n="noAccount">Aucun compte requis</strong><small data-i18n="noAccountSub">Le client remplit simplement sa demande.</small></p>
-      </div>
-      <div>
-        <span class="mini-icon">✓</span>
-        <p><strong data-i18n="direct">Direct WhatsApp</strong><small data-i18n="directSub">Le professionnel reçoit une demande structurée.</small></p>
-      </div>
-      <div>
-        <span class="mini-icon">✓</span>
-        <p><strong data-i18n="fast">Rapide à configurer</strong><small data-i18n="fastSub">Tarifs, services, logo et numéro sont modifiables.</small></p>
-      </div>
-    </section>
-  </main>
+<section class="commercial-strip">
+  <div><span class="mini-icon">✓</span><p><strong data-i18n="noAccount">Aucun compte requis</strong><small data-i18n="noAccountSub">Le client remplit simplement sa demande.</small></p></div>
+  <div><span class="mini-icon">✓</span><p><strong data-i18n="direct">Direct WhatsApp</strong><small data-i18n="directSub">Le professionnel reçoit une demande structurée.</small></p></div>
+  <div><span class="mini-icon">✓</span><p><strong data-i18n="fast">Rapide à configurer</strong><small data-i18n="fastSub">Tarifs, services, logo et numéro sont modifiables.</small></p></div>
+</section>
 
-  <footer>Powered by <strong>QuoteGo</strong> · Commercial V1</footer>
+<section class="final-cta">
+  <div><div class="sales-kicker">POUR LES PROFESSIONNELS</div><h2>Votre version QuoteGo, avec vos services et vos prix.</h2><p>Logo, couleurs, tarifs, langues et WhatsApp personnalisés.</p></div>
+  <button id="salesCta" class="sales-primary button-reset">Je veux QuoteGo →</button>
+</section>
+</main>
 
-  <script src="config.js"></script>
-  <script src="app.js"></script>
-</body>
-</html>
+<footer>Powered by <strong>QuoteGo</strong> · Commercial Demo V2</footer>
+
+<div id="salesModal" class="sales-modal-wrap"><div class="sales-backdrop"></div><div class="sales-modal">
+<button id="salesClose" class="sales-close">×</button><div class="sales-kicker">QUOTEGO POUR VOTRE ENTREPRISE</div>
+<h3>Une version configurée pour votre activité.</h3><p>Cette démo présente le concept. La version client peut utiliser votre logo, vos prestations, vos prix, vos langues et votre numéro WhatsApp.</p>
+<div class="sales-box"><strong>Version pilote</strong><span>Personnalisation complète · sans abonnement logiciel obligatoire</span></div>
+<button id="copyInterest" class="sales-primary button-reset wide">Copier le message de contact</button><small id="copyStatus"></small>
+</div></div>
+
+<script src="config.js"></script><script src="app.js"></script>
+</body></html>
