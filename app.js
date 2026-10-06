@@ -461,8 +461,69 @@ Je souhaite demander un rendez-vous detailing.
 Pouvez-vous me confirmer le tarif final et la disponibilité ?`;
 }
 
+
+const REQUESTS_KEY = "quotego_requests_v1";
+
+function getRequests(){
+  try{
+    const data = JSON.parse(localStorage.getItem(REQUESTS_KEY) || "[]");
+    return Array.isArray(data) ? data : [];
+  }catch(e){
+    return [];
+  }
+}
+
+function saveRequest(){
+  const v=selected(C.vehicles,state.vehicle);
+  const p=selected(C.packages,state.package);
+  const c=selected(C.conditions,state.condition);
+  const ex=state.extras.map(id=>selected(C.extras,id)).filter(Boolean);
+
+  const request = {
+    ref: state.ref,
+    createdAt: new Date().toISOString(),
+    updatedAt: new Date().toISOString(),
+    customer: {
+      name: state.customer.name,
+      car: state.customer.car,
+      date: state.customer.date,
+      note: state.customer.note
+    },
+    vehicle: { id:v?.id || "", label:label(v) },
+    package: { id:p?.id || "", label:label(p) },
+    condition: { id:c?.id || "", label:label(c) },
+    extras: ex.map(x=>({id:x.id,label:label(x),price:x.price||0})),
+    estimate: total(),
+    currency: C.business.currency,
+    language: lang,
+    status: "new"
+  };
+
+  const requests = getRequests();
+  const i = requests.findIndex(x=>x.ref===request.ref);
+
+  if(i>=0){
+    request.status = requests[i].status || "new";
+    request.createdAt = requests[i].createdAt || request.createdAt;
+    requests[i] = request;
+  }else{
+    requests.unshift(request);
+  }
+
+  localStorage.setItem(REQUESTS_KEY, JSON.stringify(requests));
+
+  try{
+    const channel = new BroadcastChannel("quotego_admin");
+    channel.postMessage({type:"request-updated", ref:request.ref});
+    channel.close();
+  }catch(e){}
+
+  return request;
+}
+
 function whatsapp(){
   const msg=buildMessage();
+  saveRequest();
   if(C.business.demoMode || !/^\d{8,15}$/.test(C.business.whatsapp)){
     showDemoMessage(msg);
     return;

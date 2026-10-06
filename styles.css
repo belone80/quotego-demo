@@ -117,3 +117,5 @@ footer{text-align:center;color:#53685f;font-size:9px;padding:22px 0 30px}
 @media(prefers-reduced-motion:reduce){
   *,*:before,*:after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
 }
+
+.admin-link{color:var(--accent)!important}

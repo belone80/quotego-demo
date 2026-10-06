@@ -1,19 +1,25 @@
-# QuoteGo Premium Commercial V3
+# QuoteGo Premium V4 — Admin Dashboard
 
-V3 UX / organisation / développement.
+## V4
+- Tableau de bord admin `admin.html`
+- Enregistrement automatique des demandes quand le client prépare le WhatsApp
+- Référence QuoteGo
+- Client, véhicule, formule, état, options, date, estimation
+- Statuts : Nouveau / À confirmer / Confirmé / Terminé / Annulé
+- Recherche et filtre
+- Détail d'une demande
+- Modification du statut
+- Suppression
+- Export CSV
+- Statistiques
+- Responsive PC/mobile
+- Synchronisation entre onglets du même navigateur
 
-## Nouveautés
-- Parcours visuel en 4 étapes
-- Bouton retour
-- Validation des champs essentiels
-- Sauvegarde locale automatique du brouillon
-- Référence unique QuoteGo pour chaque demande
-- Message WhatsApp avec référence
-- Micro-animations et interactions plus propres
-- Meilleure ergonomie PC + mobile
-- CTA et présentation commerciale conservés
-- Mode démo public sans numéro personnel
-- FR / NL / EN / AR
+## Important
+Cette V4 reste une démo 100 % statique sur GitHub Pages.
+Les demandes sont enregistrées en `localStorage`, donc elles sont visibles uniquement dans le même navigateur/appareil.
+Pour une vraie version client synchronisée entre téléphone/PC et plusieurs employés, la prochaine étape sera un backend/database.
 
-## Déploiement
-Compatible GitHub Pages. Aucun backend ni API payante.
+## Accès
+- Démo client : `index.html`
+- Dashboard : `admin.html`

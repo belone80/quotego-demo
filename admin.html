@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,viewport-fit=cover">
+<meta name="theme-color" content="#07100e">
+<title>QuoteGo Admin</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="admin.css">
+</head>
+<body>
+<div class="admin-noise"></div>
+
+<aside class="sidebar">
+  <a href="index.html" class="admin-brand">
+    <div class="admin-logo">Q</div>
+    <div><strong>QuoteGo</strong><span>Admin</span></div>
+  </a>
+
+  <nav>
+    <button class="nav-item active" data-view="requests"><span>▦</span> Demandes</button>
+    <a class="nav-item" href="index.html"><span>↗</span> Voir la démo</a>
+  </nav>
+
+  <div class="sidebar-note">
+    <span>MODE DÉMO</span>
+    <p>Les données sont stockées localement sur ce navigateur.</p>
+  </div>
+</aside>
+
+<main class="admin-main">
+  <header class="admin-top">
+    <div>
+      <span class="eyebrow">TABLEAU DE BORD</span>
+      <h1>Demandes clients</h1>
+      <p>Suivez les estimations et l’avancement de chaque demande.</p>
+    </div>
+    <div class="top-actions">
+      <button id="exportBtn" class="secondary-btn">Exporter CSV</button>
+      <a href="index.html#demo" class="primary-btn">+ Nouvelle demande</a>
+    </div>
+  </header>
+
+  <section class="stats-grid">
+    <article><span>Total demandes</span><strong id="statTotal">0</strong><small id="statTotalSub">Aucune demande</small></article>
+    <article><span>Nouvelles</span><strong id="statNew">0</strong><small>À traiter</small></article>
+    <article><span>Confirmées</span><strong id="statConfirmed">0</strong><small>Rendez-vous validés</small></article>
+    <article><span>Valeur estimée</span><strong id="statValue">0 €</strong><small>Hors demandes annulées</small></article>
+  </section>
+
+  <section class="requests-panel">
+    <div class="panel-head">
+      <div>
+        <h2>Toutes les demandes</h2>
+        <p id="resultCount">0 demande</p>
+      </div>
+      <div class="filters">
+        <div class="search-box">
+          <span>⌕</span>
+          <input id="searchInput" placeholder="Référence, client, véhicule…">
+        </div>
+        <select id="statusFilter">
+          <option value="all">Tous les statuts</option>
+          <option value="new">Nouveau</option>
+          <option value="pending">À confirmer</option>
+          <option value="confirmed">Confirmé</option>
+          <option value="done">Terminé</option>
+          <option value="cancelled">Annulé</option>
+        </select>
+      </div>
+    </div>
+
+    <div id="emptyState" class="empty-state">
+      <div>Q</div>
+      <h3>Aucune demande pour le moment</h3>
+      <p>Fais un parcours dans la démo QuoteGo puis clique sur “Préparer WhatsApp”. La demande apparaîtra ici.</p>
+      <a href="index.html#demo" class="primary-btn">Créer une demande test</a>
+    </div>
+
+    <div id="desktopTable" class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Référence</th>
+            <th>Client</th>
+            <th>Véhicule</th>
+            <th>Formule</th>
+            <th>Date souhaitée</th>
+            <th>Estimation</th>
+            <th>Statut</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody id="requestsBody"></tbody>
+      </table>
+    </div>
+
+    <div id="mobileCards" class="mobile-cards"></div>
+  </section>
+</main>
+
+<div id="detailWrap" class="detail-wrap">
+  <div class="detail-backdrop" id="detailBackdrop"></div>
+  <aside class="detail-panel">
+    <div class="detail-head">
+      <div><span>DÉTAIL DE LA DEMANDE</span><h2 id="detailRef">QG-XXXXXX</h2></div>
+      <button id="detailClose">×</button>
+    </div>
+    <div id="detailContent"></div>
+  </aside>
+</div>
+
+<div id="toast" class="toast"></div>
+
+<script src="admin.js"></script>
+</body>
+</html>
