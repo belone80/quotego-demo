@@ -26,7 +26,7 @@
   <h1>Transforme une demande floue<br><span>en client prêt à réserver.</span></h1>
   <p>QuoteGo pose les bonnes questions à la place du professionnel, calcule une estimation et prépare une demande claire avant même le premier échange.</p>
   <div class="sales-actions"><a href="#demo" class="sales-primary">Tester la démo →</a><a href="#how" class="sales-secondary">Voir comment ça marche</a></div>
-  <div class="sales-metrics"><div><strong>30 sec</strong><span>pour qualifier une demande</span></div><div><strong>4 langues</strong><span>FR · NL · EN · AR</span></div><div><strong>0 €</strong><span>de logiciel pour la V1</span></div></div>
+  <div class="sales-metrics"><div><strong>30 sec</strong><span>pour qualifier une demande</span></div><div><strong>4 langues</strong><span>FR · NL · EN · AR</span></div><div><strong>1 lien</strong><span>Instagram · Google · QR</span></div></div>
 </section>
 
 <section class="compare-section">
@@ -70,9 +70,26 @@
 </section>
 
 <section class="app-card">
-  <div class="progress-wrap"><div class="progress-copy"><span id="progressLabel">Étape 1 sur 4</span><span id="progressPct">25%</span></div><div class="progress-track"><div id="progressBar"></div></div></div>
+  <div class="app-status-row">
+    <div class="live-status"><i></i><span>QuoteGo Live</span></div>
+    <div class="draft-status" id="draftStatus">Brouillon sauvegardé</div>
+  </div>
+
+  <div class="progress-wrap">
+    <div class="progress-copy"><span id="progressLabel">Étape 1 sur 4</span><span id="progressPct">25%</span></div>
+    <div class="progress-track"><div id="progressBar"></div></div>
+    <div class="journey-steps" id="journeySteps"></div>
+  </div>
+
   <div id="stepHost"></div>
-  <div class="bottom-bar"><div><small data-i18n="estimate">Estimation</small><strong id="liveTotal">0 €</strong></div><button id="mainBtn" class="main-btn" type="button"><span data-i18n="continue">Continuer</span><b>→</b></button></div>
+
+  <div class="bottom-bar">
+    <div class="bottom-total"><small data-i18n="estimate">Estimation</small><strong id="liveTotal">0 €</strong></div>
+    <div class="bottom-actions">
+      <button id="backBtn" class="back-btn" type="button">← <span>Retour</span></button>
+      <button id="mainBtn" class="main-btn" type="button"><span data-i18n="continue">Continuer</span><b>→</b></button>
+    </div>
+  </div>
 </section>
 
 <section class="commercial-strip">
@@ -87,7 +104,7 @@
 </section>
 </main>
 
-<footer>Powered by <strong>QuoteGo</strong> · Commercial Demo V2</footer>
+<footer>Powered by <strong>QuoteGo</strong> · Commercial Demo V3</footer>
 
 <div id="salesModal" class="sales-modal-wrap"><div class="sales-backdrop"></div><div class="sales-modal">
 <button id="salesClose" class="sales-close">×</button><div class="sales-kicker">QUOTEGO POUR VOTRE ENTREPRISE</div>
